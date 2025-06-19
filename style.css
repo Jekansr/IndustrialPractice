@@ -1,0 +1,335 @@
+/* Базовые стили */
+:root {
+    --primary-color: #458A8F; /* Бирюзовый */
+    --primary-dark: #037171;
+    --primary-light: #80eaea;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {/* сбрасываем базовый отступы */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {/* Шрифт */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* заголовки */
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+/* заголовки */
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Навигация */
+.navbar {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 0;
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* Основное содержимое */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+}
+
+/* Карточки */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.skill-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.skill-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.skill-card li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-card li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+
+
+
+/* Таймлайн карьеры */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--primary-light);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 20px 0;
+    position: relative;
+}
+
+.timeline-date {
+    width: 120px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    left: 55%;
+}
+
+.timeline-content h3 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+
+
+
+/* Статистика */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+
+
+/* Технологические тренды */
+.tech-trends {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.tech-trends span {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.future-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.future-content h3 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .timeline:before {
+        left: 30px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 90px);
+        left: 70px !important;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .timeline:before {
+        left: 30px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 90px);
+        left: 70px !important;
+    }
+}
